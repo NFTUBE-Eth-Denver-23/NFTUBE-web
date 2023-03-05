@@ -3,7 +3,6 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 
 import { Spacing } from "components/layout"
-import { ProfileButton } from "components/nav-bar/ProfileButton"
 import { BrowsingChain } from "components/browsing-chain"
 import { SearchBar } from "components/SearchBar"
 import { NavigationItem } from "types/index"
@@ -19,9 +18,7 @@ interface Props {
 }
 
 const editPageLoader = () => import("../../../pages/create/new")
-const profileModalLoader = () => import("components/nav-bar/ProfileDropdown")
 const _CreatePage = LazyComponentWithPreloadFactory(editPageLoader)
-const _ProfileModal = LazyComponentWithPreloadFactory(profileModalLoader)
 export function NavBar({ navigations }: Props) {
   const { asPath, push } = useRouter()
 
@@ -61,7 +58,6 @@ export function NavBar({ navigations }: Props) {
       <RightCcontainer>
         <BrowsingChain />
         <CreateButton onMouseEnter={() => preload(_CreatePage)} />
-        <ProfileButton onMouseEnter={() => preload(_ProfileModal)} />
       </RightCcontainer>
     </Navbar>
   )
