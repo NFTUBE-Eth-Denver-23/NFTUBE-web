@@ -22,7 +22,7 @@ export enum CollectionType {
 export interface Collection {
   collectionId?: string
   address?: string
-  isCreatedByUnic?: boolean
+  isCreatedByNFTube?: boolean
   creatorAddress?: string
   name?: string
   description?: string
@@ -51,7 +51,7 @@ export interface CollectionUserRelation {
 export const DefaultCollection: Collection = {
   collectionId: uuidv4(),
   address: "",
-  isCreatedByUnic: true,
+  isCreatedByNFTube: true,
   creatorAddress: "",
   name: "",
   description: "",
