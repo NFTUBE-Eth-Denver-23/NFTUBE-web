@@ -5,11 +5,11 @@ interface IAddresses {
     NFTUBE_MANAGER_ADDRESS: string
   }
 }
-
+//0x0b27a79cb9C0B38eE06Ca3d94DAA68e0Ed17F953
 export const addresses: IAddresses = {
   //LOCAL
   [ChainId.LOCAL_TESTNET]: {
-    NFTUBE_MANAGER_ADDRESS: "0xD2D5e508C82EFc205cAFA4Ad969a4395Babce026",
+    NFTUBE_MANAGER_ADDRESS: "0x0b27a79cb9C0B38eE06Ca3d94DAA68e0Ed17F953",
   },
   //ETH MAINNET
   [ChainId.MAINNET]: {

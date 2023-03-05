@@ -22,12 +22,20 @@ export default function CollectionList({ tab }: { tab: string }) {
         return await searchCollections({
           keyword: keywords.value[0],
           category: tab as CollectionType,
-          chain: isProduction ? getChainTagById(browsingChainId) : undefined,
+          chain: isProduction
+            ? browsingChainId === 1
+              ? undefined
+              : getChainTagById(browsingChainId)
+            : undefined,
         })
       } else {
         return await queryCollections({
           category: tab as CollectionType,
-          chain: isProduction ? getChainTagById(browsingChainId) : undefined,
+          chain: isProduction
+            ? browsingChainId === 1
+              ? undefined
+              : getChainTagById(browsingChainId)
+            : undefined,
         })
       }
     }

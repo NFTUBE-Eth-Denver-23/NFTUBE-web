@@ -85,6 +85,7 @@ export default function UploadAssets({
                       tokenId,
                       supply: editedNFTs.length > 0 ? editedNFTs[0].supply : 1,
                       chain: getChainTagById(chainId),
+                      dotId: "new Dot Id",
                     }
                     count++
                     newNFTs.push(newNFT)

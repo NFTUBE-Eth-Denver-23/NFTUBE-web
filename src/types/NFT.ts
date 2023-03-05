@@ -22,6 +22,7 @@ export interface NFT {
   isMinted?: boolean
   mintPrice?: number
   maxTokenId?: number
+  dotId?: string
   assets?: Array<Asset>
   traits?: Array<Trait>
 }
@@ -72,6 +73,7 @@ export const DefaultNFT = {
   collectionId: "",
   marketplaceURL: "",
   creatorAddress: "",
+  dotId: "",
   isListed: true,
   isNFTImageScannable: false,
   isMinted: false,

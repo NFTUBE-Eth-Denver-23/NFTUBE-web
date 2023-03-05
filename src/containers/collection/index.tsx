@@ -258,12 +258,12 @@ export default function Collection() {
             </InfoContainer>
             {isCreator ? (
               <ButtonsContainer>
-                <Button
+                {/* <Button
                   onClick={() => push(`/collection/edit/${id}`)}
                   style={{ width: 200, height: 50 }}
                 >
                   Edit Collection
-                </Button>
+                </Button> */}
                 {collectionData?.isCreatedByNFTube && (
                   <Button
                     theme={"secondary" as ButtonTheme}
