@@ -75,10 +75,12 @@ export default function Collection() {
     }
   )
 
-  const { data: scanAndViewCount, isLoading: scanAndViewCountLoading } =
-    useQuery(id && ["query_collection_scan_and_view_count", id], async () => {
-      return await queryCollectionScanAndViewCount(id)
-    })
+  const {
+    data: scanAndViewCount,
+    isLoading: scanAndViewCountLoading,
+  } = useQuery(id && ["query_collection_scan_and_view_count", id], async () => {
+    return await queryCollectionScanAndViewCount(id)
+  })
 
   const {
     data: collectionUserRelation,
@@ -103,63 +105,59 @@ export default function Collection() {
     }
   )
 
-  const { mutate: likeCollectionMutate, isLoading: likeCollectionLoading } =
-    useMutation(
-      collectionData?.collectionId &&
-        user?.userId && [
-          "like_nft",
-          collectionData?.collectionId,
-          user?.userId,
-        ],
-      async () => {
-        await likeCollection({
-          collectionId: collectionData?.collectionId,
-          userId: user?.userId,
-        })
+  const {
+    mutate: likeCollectionMutate,
+    isLoading: likeCollectionLoading,
+  } = useMutation(
+    collectionData?.collectionId &&
+      user?.userId && ["like_nft", collectionData?.collectionId, user?.userId],
+    async () => {
+      await likeCollection({
+        collectionId: collectionData?.collectionId,
+        userId: user?.userId,
+      })
+    },
+    {
+      onSuccess: () => {
+        refetch()
+        Toast.success("Collection marked!")
       },
-      {
-        onSuccess: () => {
-          refetch()
-          Toast.success("Collection marked!")
-        },
-        onError: (error: any) => {
-          Toast.error(
-            error.message
-              ? error.message
-              : "Could not mark collection. Please try again later."
-          )
-        },
-      }
-    )
+      onError: (error: any) => {
+        Toast.error(
+          error.message
+            ? error.message
+            : "Could not mark collection. Please try again later."
+        )
+      },
+    }
+  )
 
-  const { mutate: unlikeCollectionMutate, isLoading: unlikeCollectionLoading } =
-    useMutation(
-      collectionData?.collectionId &&
-        user?.userId && [
-          "like_nft",
-          collectionData?.collectionId,
-          user?.userId,
-        ],
-      async () => {
-        await unlikeCollection({
-          collectionId: collectionData?.collectionId,
-          userId: user?.userId,
-        })
+  const {
+    mutate: unlikeCollectionMutate,
+    isLoading: unlikeCollectionLoading,
+  } = useMutation(
+    collectionData?.collectionId &&
+      user?.userId && ["like_nft", collectionData?.collectionId, user?.userId],
+    async () => {
+      await unlikeCollection({
+        collectionId: collectionData?.collectionId,
+        userId: user?.userId,
+      })
+    },
+    {
+      onSuccess: () => {
+        refetch()
+        Toast.success("Collection unmarked!")
       },
-      {
-        onSuccess: () => {
-          refetch()
-          Toast.success("Collection unmarked!")
-        },
-        onError: (error: any) => {
-          Toast.error(
-            error.message
-              ? error.message
-              : "Could not mark nft. Please try again later."
-          )
-        },
-      }
-    )
+      onError: (error: any) => {
+        Toast.error(
+          error.message
+            ? error.message
+            : "Could not mark nft. Please try again later."
+        )
+      },
+    }
+  )
 
   const creatorInfo = userData
     ? userData.userTag
@@ -266,7 +264,7 @@ export default function Collection() {
                 >
                   Edit Collection
                 </Button>
-                {collectionData?.isCreatedByUnic && (
+                {collectionData?.isCreatedByNFTube && (
                   <Button
                     theme={"secondary" as ButtonTheme}
                     style={{ width: 200, height: 50 }}
