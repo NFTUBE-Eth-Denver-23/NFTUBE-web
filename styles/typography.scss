@@ -1,0 +1,40 @@
+@import url("./gilroy.css");
+
+@mixin _typography(
+  $name,
+  $font-family,
+  $font-size,
+  $line-height,
+  $font-weight
+) {
+  .typography-#{$name} {
+    font-size: $font-size;
+    line-height: $line-height;
+    font-family: $font-family;
+    font-weight: $font-weight;
+  }
+}
+
+@include _typography("h", "Gilroy", 30px, 38px, 700);
+@include _typography("sh", "Gilroy", 20px, auto, 500);
+@include _typography("h1", "Gilroy", 26px, 34px, 700);
+@include _typography("h2", "Gilroy", 20px, 30px, 600);
+@include _typography("h3", "Gilroy", 18px, 26px, 700);
+
+@include _typography("b1", "Gilroy", 16px, 24px, 700);
+@include _typography("b2", "Gilroy", 16px, 24px, 600);
+@include _typography("b3", "Gilroy", 16px, 24px, 500);
+@include _typography("b4", "Gilroy", 16px, 24px, 400);
+@include _typography("b5", "Gilroy", 14px, 20px, 700);
+@include _typography("b6", "Gilroy", 14px, 20px, 600);
+@include _typography("b7", "Gilroy", 14px, 20px, 500);
+@include _typography("b8", "Gilroy", 14px, 20px, 400);
+@include _typography("b9", "Gilroy", 13px, 16px, 700);
+@include _typography("b10", "Gilroy", 13px, 16px, 600);
+@include _typography("b11", "Gilroy", 13px, 16px, 500);
+@include _typography("b12", "Gilroy", 12px, 16px, 400);
+@include _typography("b13", "Gilroy", 12px, 12px, 600);
+@include _typography("b14", "Gilroy", 12px, 12px, 400);
+
+@include _typography("button", "Gilroy", 13px, 19.5px, 700);
+@include _typography("button2", "Gilroy", 13px, 19.5px, 600);

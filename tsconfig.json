@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "containers/*": ["src/containers/*"],
+      "components/*": ["src/components/*"],
+      "hooks/*": ["src/hooks/*"],
+      "utils/*": ["src/utils/*"],
+      "constants/*": ["src/constants/*"],
+      "remotes/*": ["src/remotes/*"],
+      "types/*": ["src/types/*"],
+      "styles/*": ["src/styles/*"],
+      "icons/*": ["src/icons/*"],
+      "svgs/*": ["src/svgs/*"],
+      "store/*": ["src/store/*"],
+      "providers/*": ["src/providers/*"],
+      "helpers/*": ["src/helpers/*"],
+      "hocs/*": ["src/hocs/*"],
+      "connectors/*": ["src/connectors/*"],
+      "abi/*": ["src/abi/*"],
+      "api/*": ["src/api/*"]
+    },
+    "incremental": true
+  },
+  "exclude": ["node_modules", ".next", "out", "__tests__/**"],
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "src/utils/format/shortenAddress.tts"
+  ]
+}
